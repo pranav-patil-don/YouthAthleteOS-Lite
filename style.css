@@ -1060,7 +1060,9 @@ select:focus {
 
 /* BOTTOM NAV */
 
-/* BOTTOM NAV */
+/* =========================
+   BOTTOM NAVIGATION
+========================= */
 
 .bottom-nav {
   position: fixed;
@@ -1068,13 +1070,17 @@ select:focus {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
+
   width: min(100%, 1100px);
   height: 72px;
+
   background: rgba(8, 8, 8, 0.96);
   border-top: 1px solid var(--border);
+
   display: flex;
   align-items: center;
   justify-content: space-around;
+
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
 }
@@ -1082,20 +1088,27 @@ select:focus {
 .nav-item {
   flex: 1;
   height: 100%;
+
   background: transparent;
   border: 0;
   color: #777;
+
   padding: 7px 2px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   gap: 4px;
-  transition: color 0.2s ease, transform 0.2s ease;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
 }
 
 .nav-item:hover {
-  color: var(--green);
+  color: #b5b5b5;
 }
 
 .nav-item span,
@@ -1112,33 +1125,78 @@ select:focus {
   font-size: 7px;
   margin-top: 0;
   font-weight: 800;
+  letter-spacing: 0.3px;
 }
 
+/* ACTIVE TAB */
 .active-nav {
   color: var(--green);
 }
 
-/* TRAIN — FIXED */
+/* =========================
+   TRAIN BUTTON
+   Normal state
+========================= */
+
 .nav-center {
   position: relative;
 }
 
 .nav-center span {
-  width: 34px;
-  height: 34px;
+  width: 30px;
+  height: 30px;
+
   margin: 0 auto;
-  background: var(--green);
-  color: #000;
-  border-radius: 10px;
+
+  background: #161616;
+  color: #888;
+
+  border: 1px solid #303030;
+  border-radius: 9px;
+
   display: grid;
   place-items: center;
-  font-size: 16px;
-  box-shadow: 0 0 12px rgba(57, 255, 20, 0.22);
+
+  font-size: 15px;
+
+  box-shadow: none;
 }
 
 .nav-center small {
+  color: #777;
+}
+
+/* TRAIN ACTIVE STATE ONLY */
+
+.nav-center.active-nav span {
+  background: var(--green);
+  color: #000;
+  border-color: var(--green);
+
+  box-shadow:
+    0 0 12px rgba(57, 255, 20, 0.18);
+}
+
+.nav-center.active-nav small {
   color: var(--green);
 }
+
+
+/* =========================
+   DESKTOP NAV
+========================= */
+
+@media (min-width: 760px) {
+
+  .bottom-nav {
+    width: 620px;
+    bottom: 20px;
+
+    border: 1px solid var(--border);
+    border-radius: 20px;
+  }
+}
+
 /* DESKTOP */
 
 @media (min-width: 760px) {

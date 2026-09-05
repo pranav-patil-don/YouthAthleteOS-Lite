@@ -368,7 +368,7 @@ function updateHomeStats() {
   if (athleteData.profile) {
 
     const target =
-      athleteData.profile.weight * 0.035;
+      Math.max(3, athleteData.profile.weight * 0.035);
 
     const water =
       nutrition?.water || 0;
@@ -579,19 +579,13 @@ function logActivity() {
     totalSeconds / 3600;
 
 
-  // Speed = Distance / Time
-
   const speed =
     distance / totalHours;
 
 
-  // Pace = Total Minutes / Distance
-
   const paceMinutes =
     (totalSeconds / 60) / distance;
 
-
-  // Safety check for running
 
   if (
     selectedSport === "running" &&
@@ -606,8 +600,6 @@ function logActivity() {
     if (!continueLog) return;
   }
 
-
-  // Previous session comparison
 
   const previous =
     [...athleteData.activities]
@@ -902,8 +894,6 @@ function logStrengthSet() {
   let feedback = "";
 
 
-  // Youth volume guidance
-
   if (reps < 10) {
     feedback =
       "Consider controlled 10–15 rep work rather than heavy low-rep training.";
@@ -924,8 +914,6 @@ function logStrengthSet() {
       "Good training zone. Maintain control and consistent technique.";
   }
 
-
-  // Safety flag for isolation exercises
 
   const bodyWeight =
     athleteData.profile.weight;
@@ -1096,8 +1084,6 @@ function logRecovery() {
   };
 
 
-  // XP bonus for 8+ hours
-
   if (sleepHours >= 8) {
     addXP(20);
   }
@@ -1126,11 +1112,6 @@ function updateReadiness() {
 
   if (!recovery) return;
 
-
-  // Score:
-  // Sleep contributes 40 points
-  // Quality contributes 30 points
-  // Morning readiness contributes 30 points
 
   const sleepScore =
     Math.min(
@@ -1237,14 +1218,13 @@ function updateNutritionTargets() {
     athleteData.profile.weight;
 
 
+  // Minimum 3 litres per day
   const hydration =
-    weight * 0.035;
+    Math.max(3, weight * 0.035);
 
-  const proteinLow =
-    weight * 1.6;
-
-  const proteinHigh =
-    weight * 2.0;
+  // Protein = 1.2g per kg
+  const proteinTarget =
+    weight * 1.2;
 
 
   document.getElementById(
@@ -1256,7 +1236,7 @@ function updateNutritionTargets() {
   document.getElementById(
     "proteinTarget"
   ).textContent =
-    `${Math.round(proteinLow)}–${Math.round(proteinHigh)} g`;
+    `${Math.round(proteinTarget)} g`;
 }
 
 
@@ -1295,10 +1275,8 @@ function logNutrition() {
 
 
   const proteinGoal =
-    athleteData.profile.weight * 1.6;
+    athleteData.profile.weight * 1.2;
 
-
-  // XP for reaching minimum protein target
 
   if (protein >= proteinGoal) {
     addXP(30);
@@ -1329,11 +1307,13 @@ function updateFuelScore() {
   if (!nutrition || !athleteData.profile) return;
 
 
+  // Minimum hydration target = 3L
   const hydrationTarget =
-    athleteData.profile.weight * 0.035;
+    Math.max(3, athleteData.profile.weight * 0.035);
 
+  // Protein = 1.2g/kg
   const proteinTarget =
-    athleteData.profile.weight * 1.6;
+    athleteData.profile.weight * 1.2;
 
 
   const waterScore =
