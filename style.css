@@ -1260,4 +1260,254 @@ select:focus {
     min-width: 70px;
     height: 70px;
   }
+  /* =========================================
+   STABILITY + ACCESSIBILITY UPDATES
+========================================= */
+
+/* Prevent bottom navigation from covering content */
+main {
+  padding-bottom: 110px;
+}
+
+/* Extra safety for tab content */
+.tab {
+  padding-bottom: 110px;
+}
+
+
+/* =========================================
+   IMPROVED TEXT CONTRAST
+========================================= */
+
+small,
+.muted,
+.subtitle,
+.secondary-text,
+.history-item p,
+.exercise-card p,
+.analytics-row small {
+  color: #aeb8ae;
+}
+
+
+/* Improve general paragraph readability */
+p {
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   INPUT VALIDATION VISUALS
+========================================= */
+
+input:invalid:not(:placeholder-shown) {
+  border-color: #ff6b6b;
+}
+
+input:valid:not(:placeholder-shown) {
+  border-color: #00c853;
+}
+
+
+/* Better focus accessibility */
+input:focus,
+select:focus,
+button:focus-visible {
+  outline: 2px solid #00e676;
+  outline-offset: 2px;
+}
+
+
+/* =========================================
+   BOTTOM NAVIGATION SAFETY
+========================================= */
+
+.bottom-nav {
+  z-index: 1000;
+}
+
+
+/* Ensure last cards aren't hidden */
+.tab > *:last-child {
+  margin-bottom: 25px;
+}
+
+
+/* =========================================
+   MOBILE IMPROVEMENTS
+========================================= */
+
+@media (max-width: 768px) {
+
+  main {
+    padding-bottom: 120px;
+  }
+
+  .tab {
+    padding-bottom: 120px;
+  }
+
+  input,
+  select,
+  button {
+    min-height: 44px;
+  }
+
+  small {
+    font-size: 0.8rem;
+  }
+}
+
+
+/* =========================================
+   SAFE PROGRESS BARS
+========================================= */
+
+.progress-fill {
+  max-width: 100%;
+  transition: width 0.3s ease;
+}
+
+
+/* =========================================
+   EMPTY STATES
+========================================= */
+
+.empty-state {
+  padding: 20px;
+  text-align: center;
+  color: #aeb8ae;
+}
+
+
+/* =========================================
+   ANALYTICS
+========================================= */
+
+.analytics-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.analytics-row div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+
+/* =========================================
+   PERFORMANCE INSIGHTS
+========================================= */
+
+.insight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.insight-item span {
+  flex-shrink: 0;
+}
+
+.insight-item p {
+  margin: 0;
+}
+
+
+/* =========================================
+   SAFER BUTTON INTERACTION
+========================================= */
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+/* =========================================
+   PREVENT HORIZONTAL OVERFLOW
+========================================= */
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+
+/* =========================================
+   HISTORY TEXT
+========================================= */
+
+.history-item {
+  word-break: break-word;
+}
+
+.history-item h4 {
+  margin-bottom: 4px;
+}
+
+.improvement-positive {
+  color: #00e676 !important;
+}
+
+.improvement-negative {
+  color: #ff8a80 !important;
+}
+/* =========================================
+   BACKUP + DANGER ZONE
+========================================= */
+
+.backup-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.secondary-btn {
+  background: transparent;
+  border: 1px solid #3c4a3c;
+  color: #e8f5e9;
+  border-radius: 12px;
+  padding: 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.secondary-btn:hover {
+  border-color: #00e676;
+}
+
+.danger-card {
+  border: 1px solid rgba(255, 100, 100, 0.3);
+}
+
+.danger-btn {
+  width: 100%;
+  margin-top: 12px;
+  background: transparent;
+  border: 1px solid #ff6b6b;
+  color: #ff8a80;
+  border-radius: 12px;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.danger-btn:hover {
+  background: rgba(255, 100, 100, 0.08);
+}
+
+@media (max-width: 500px) {
+  .backup-actions {
+    grid-template-columns: 1fr;
+  }
+}
 }

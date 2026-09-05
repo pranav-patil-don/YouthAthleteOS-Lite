@@ -3,22 +3,31 @@
 <head>
   <meta charset="UTF-8" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
   <meta name="theme-color" content="#050505" />
-  <meta name="description" content="YouthAthleteOS - Train Smart. Recover Better. Grow Strong." />
+
+  <meta
+    name="description"
+    content="Youth Athlete OS - Train Smart. Recover Better. Grow Strong."
+  />
 
   <link rel="manifest" href="./manifest.json" />
 
-  <title>YouthAthleteOS</title>
+  <title>Youth Athlete OS</title>
 
   <link rel="stylesheet" href="./style.css" />
 </head>
 
+
 <body>
 
-  <!-- =========================
+  <!-- =====================================
        ONBOARDING
-  ========================== -->
+  ====================================== -->
 
   <section id="onboarding" class="onboarding">
 
@@ -27,18 +36,27 @@
     <div class="onboarding-card">
 
       <div class="brand">
+
         <div class="brand-icon">⚡</div>
+
         <div>
           <h1>YOUTH<span>ATHLETE</span></h1>
           <p>PERFORMANCE OPERATING SYSTEM</p>
         </div>
+
       </div>
+
 
       <div class="welcome-content">
 
-        <div class="eyebrow">ATHLETE INITIALIZATION</div>
+        <div class="eyebrow">
+          ATHLETE INITIALIZATION
+        </div>
 
-        <h2>Build Your<br><span>Athlete System.</span></h2>
+        <h2>
+          Build Your<br>
+          <span>Athlete System.</span>
+        </h2>
 
         <p>
           Personalized training, recovery and nutrition tracking
@@ -47,48 +65,113 @@
 
       </div>
 
+
       <div class="form-grid">
 
         <div class="input-group">
+
           <label>ATHLETE NAME</label>
-          <input id="nameInput" type="text" placeholder="Enter your name" />
+
+          <input
+            id="nameInput"
+            type="text"
+            minlength="2"
+            maxlength="30"
+            placeholder="Enter your name"
+            required
+          />
+
         </div>
+
 
         <div class="two-column">
 
           <div class="input-group">
+
             <label>AGE</label>
-            <input id="ageInput" type="number" min="10" max="25" placeholder="15" />
+
+            <input
+              id="ageInput"
+              type="number"
+              min="10"
+              max="100"
+              step="1"
+              placeholder="15"
+              required
+            />
+
           </div>
 
+
           <div class="input-group">
+
             <label>WEIGHT (KG)</label>
-            <input id="weightInput" type="number" min="25" max="200" placeholder="55" />
+
+            <input
+              id="weightInput"
+              type="number"
+              min="20"
+              max="300"
+              step="0.1"
+              placeholder="55"
+              required
+            />
+
           </div>
 
         </div>
 
+
         <div class="input-group">
+
           <label>PRIMARY GOAL</label>
 
-          <select id="goalInput">
-            <option value="multisport">Multi-Sport Performance</option>
-            <option value="endurance">Endurance Development</option>
-            <option value="strength">Strength Development</option>
-            <option value="general">All-Round Athleticism</option>
+          <select id="goalInput" required>
+
+            <option value="multisport">
+              Multi-Sport Performance
+            </option>
+
+            <option value="endurance">
+              Endurance Development
+            </option>
+
+            <option value="strength">
+              Strength Development
+            </option>
+
+            <option value="general">
+              All-Round Athleticism
+            </option>
+
           </select>
+
         </div>
 
       </div>
 
-      <p id="onboardingError" class="error"></p>
 
-      <button class="primary-button" onclick="initializeAthlete()">
+      <p
+        id="onboardingError"
+        class="error"
+      ></p>
+
+
+      <button
+        type="button"
+        class="primary-button"
+        onclick="initializeAthlete()"
+      >
         INITIALIZE ATHLETE SYSTEM →
       </button>
 
+
       <p class="disclaimer">
-        Built for smart, sustainable development. Not a substitute for qualified coaching or medical advice.
+
+        Built for smart, sustainable development.
+        Not a substitute for qualified coaching
+        or medical advice.
+
       </p>
 
     </div>
@@ -96,54 +179,105 @@
   </section>
 
 
-  <!-- =========================
+
+  <!-- =====================================
        MAIN APP
-  ========================== -->
+  ====================================== -->
 
   <div id="app" class="app hidden">
 
-    <!-- HEADER -->
+
+    <!-- =====================================
+         HEADER
+    ====================================== -->
 
     <header class="app-header">
 
       <div class="header-brand">
+
         <div class="mini-logo">⚡</div>
 
         <div>
-          <div class="system-name">YOUTHATHLETEOS</div>
-          <div class="system-status">
-            <span></span> SYSTEM ONLINE
+
+          <div class="system-name">
+            YOUTHATHLETEOS
           </div>
+
+          <div class="system-status">
+            <span></span>
+            SYSTEM ONLINE
+          </div>
+
         </div>
+
       </div>
 
-      <button class="level-button" onclick="showTab('profile')">
-        <span id="levelBadge">NOVICE</span>
-        <strong id="xpDisplay">0 XP</strong>
+
+      <button
+        type="button"
+        class="level-button"
+        onclick="showTab('profile')"
+      >
+
+        <span id="levelBadge">
+          NOVICE
+        </span>
+
+        <strong id="xpDisplay">
+          0 XP
+        </strong>
+
       </button>
 
     </header>
 
 
-    <!-- MAIN CONTENT -->
+
+    <!-- =====================================
+         MAIN CONTENT
+    ====================================== -->
 
     <main class="main-content">
 
-      <!-- =========================
-           HOME
-      ========================== -->
 
-      <section id="homeTab" class="tab active">
+      <!-- =====================================
+           HOME
+      ====================================== -->
+
+      <section
+        id="homeTab"
+        class="tab active"
+      >
 
         <div class="page-heading">
+
           <div>
-            <p class="eyebrow">ATHLETE COMMAND CENTER</p>
-            <h2>Welcome back, <span id="athleteName">Athlete</span> 👋</h2>
-            <p id="todayDate" class="muted"></p>
+
+            <p class="eyebrow">
+              ATHLETE COMMAND CENTER
+            </p>
+
+            <h2>
+              Welcome back,
+              <span id="athleteName">
+                Athlete
+              </span>
+              👋
+            </h2>
+
+            <p
+              id="todayDate"
+              class="muted"
+            ></p>
+
           </div>
 
-          <div class="profile-dot">●</div>
+          <div class="profile-dot">
+            ●
+          </div>
+
         </div>
+
 
 
         <!-- READINESS -->
@@ -152,22 +286,34 @@
 
           <div class="readiness-left">
 
-            <p class="eyebrow">TODAY'S READINESS</p>
+            <p class="eyebrow">
+              TODAY'S READINESS
+            </p>
 
-            <h2 id="readinessLabel">BUILD YOUR BASELINE</h2>
+            <h2 id="readinessLabel">
+              BUILD YOUR BASELINE
+            </h2>
 
             <p id="readinessMessage">
-              Log sleep and recovery data to calculate today's readiness.
+              Log sleep and recovery data
+              to calculate today's readiness.
             </p>
 
           </div>
 
+
           <div class="readiness-score">
-            <span id="readinessScore">--</span>
+
+            <span id="readinessScore">
+              --
+            </span>
+
             <small>/100</small>
+
           </div>
 
         </div>
+
 
 
         <!-- QUICK STATS -->
@@ -175,85 +321,182 @@
         <div class="stats-grid">
 
           <div class="stat-card">
-            <div class="stat-icon">🔥</div>
-            <div>
-              <span>TRAINING STREAK</span>
-              <strong id="streakValue">0 DAYS</strong>
+
+            <div class="stat-icon">
+              🔥
             </div>
+
+            <div>
+
+              <span>
+                TRAINING STREAK
+              </span>
+
+              <strong id="streakValue">
+                0 DAYS
+              </strong>
+
+            </div>
+
           </div>
 
-          <div class="stat-card">
-            <div class="stat-icon">💧</div>
-            <div>
-              <span>HYDRATION</span>
-              <strong id="waterProgress">0%</strong>
-            </div>
-          </div>
 
           <div class="stat-card">
-            <div class="stat-icon">⚡</div>
-            <div>
-              <span>TOTAL XP</span>
-              <strong id="homeXp">0 XP</strong>
+
+            <div class="stat-icon">
+              💧
             </div>
+
+            <div>
+
+              <span>
+                HYDRATION
+              </span>
+
+              <strong id="waterProgress">
+                0%
+              </strong>
+
+            </div>
+
+          </div>
+
+
+          <div class="stat-card">
+
+            <div class="stat-icon">
+              ⚡
+            </div>
+
+            <div>
+
+              <span>
+                TOTAL XP
+              </span>
+
+              <strong id="homeXp">
+                0 XP
+              </strong>
+
+            </div>
+
           </div>
 
         </div>
+
 
 
         <!-- TODAY TRAINING -->
 
         <div class="section-heading">
+
           <div>
-            <p class="eyebrow">TRAINING SYSTEM</p>
-            <h2>Today's Focus</h2>
+
+            <p class="eyebrow">
+              TRAINING SYSTEM
+            </p>
+
+            <h2>
+              Today's Focus
+            </h2>
+
           </div>
 
-          <button class="text-button" onclick="showTab('workout')">
+          <button
+            type="button"
+            class="text-button"
+            onclick="showTab('workout')"
+          >
             OPEN HUB →
           </button>
+
         </div>
 
-        <div id="todayWorkout" class="today-workout"></div>
+
+        <div
+          id="todayWorkout"
+          class="today-workout"
+        ></div>
+
 
 
         <!-- RECOVERY -->
 
         <div class="section-heading">
+
           <div>
-            <p class="eyebrow">RECOVERY STATUS</p>
-            <h2>Recovery Snapshot</h2>
+
+            <p class="eyebrow">
+              RECOVERY STATUS
+            </p>
+
+            <h2>
+              Recovery Snapshot
+            </h2>
+
           </div>
 
-          <button class="text-button" onclick="showTab('recovery')">
+          <button
+            type="button"
+            class="text-button"
+            onclick="showTab('recovery')"
+          >
             LOG →
           </button>
+
         </div>
+
 
         <div class="recovery-snapshot">
 
           <div class="snapshot-item">
+
             <span>😴</span>
+
             <div>
+
               <small>SLEEP</small>
-              <strong id="homeSleep">Not logged</strong>
+
+              <strong id="homeSleep">
+                Not logged
+              </strong>
+
             </div>
+
           </div>
 
+
           <div class="snapshot-item">
+
             <span>🧠</span>
+
             <div>
+
               <small>READINESS</small>
-              <strong id="homeReadiness">Not logged</strong>
+
+              <strong id="homeReadiness">
+                Not logged
+              </strong>
+
             </div>
+
           </div>
 
+
           <div class="snapshot-item">
+
             <span>🍗</span>
+
             <div>
+
               <small>PROTEIN</small>
-              <strong id="homeProtein">0g</strong>
+
+              <strong id="homeProtein">
+                0g
+              </strong>
+
             </div>
+
           </div>
 
         </div>
@@ -261,305 +504,728 @@
       </section>
 
 
-      <!-- =========================
-           ACTIVITY LOGGER
-      ========================== -->
 
-      <section id="activityTab" class="tab">
+      <!-- =====================================
+           ACTIVITY LOGGER
+      ====================================== -->
+
+      <section
+        id="activityTab"
+        class="tab"
+      >
 
         <div class="page-heading">
+
           <div>
-            <p class="eyebrow">CARDIO PERFORMANCE</p>
-            <h2>Activity Logger</h2>
-            <p class="muted">Track your training and measure improvement.</p>
+
+            <p class="eyebrow">
+              CARDIO PERFORMANCE
+            </p>
+
+            <h2>
+              Activity Logger
+            </h2>
+
+            <p class="muted">
+              Track your training and measure improvement.
+            </p>
+
           </div>
+
         </div>
 
+
+
+        <!-- SPORT SELECTOR -->
 
         <div class="sport-selector">
 
-          <button class="sport-btn active-sport" data-sport="running" onclick="selectSport('running')">
-            🏃<span>RUN</span>
+          <button
+            type="button"
+            class="sport-btn active-sport"
+            data-sport="running"
+            onclick="selectSport('running')"
+          >
+            🏃
+            <span>RUN</span>
           </button>
 
-          <button class="sport-btn" data-sport="cycling" onclick="selectSport('cycling')">
-            🚴<span>RIDE</span>
+
+          <button
+            type="button"
+            class="sport-btn"
+            data-sport="cycling"
+            onclick="selectSport('cycling')"
+          >
+            🚴
+            <span>RIDE</span>
           </button>
 
-          <button class="sport-btn" data-sport="swimming" onclick="selectSport('swimming')">
-            🏊<span>SWIM</span>
+
+          <button
+            type="button"
+            class="sport-btn"
+            data-sport="swimming"
+            onclick="selectSport('swimming')"
+          >
+            🏊
+            <span>SWIM</span>
           </button>
 
         </div>
+
 
 
         <div class="panel">
 
           <div class="panel-title">
-            <span id="selectedSportTitle">🏃 RUNNING SESSION</span>
+
+            <span id="selectedSportTitle">
+              🏃 RUNNING SESSION
+            </span>
+
           </div>
+
 
           <div class="form-row">
 
             <div class="input-group">
-              <label>DISTANCE (KM)</label>
-              <input id="distanceInput" type="number" step="0.01" placeholder="5.00" />
+
+              <label>
+                DISTANCE (KM)
+              </label>
+
+              <input
+                id="distanceInput"
+                type="number"
+                min="0.01"
+                max="1000"
+                step="0.01"
+                placeholder="5.00"
+                required
+              />
+
             </div>
 
+
             <div class="input-group">
-              <label>HOURS</label>
-              <input id="hoursInput" type="number" min="0" placeholder="0" />
+
+              <label>
+                HOURS
+              </label>
+
+              <input
+                id="hoursInput"
+                type="number"
+                min="0"
+                max="23"
+                step="1"
+                placeholder="0"
+              />
+
             </div>
 
           </div>
+
+
 
           <div class="form-row">
 
             <div class="input-group">
-              <label>MINUTES</label>
-              <input id="minutesInput" type="number" min="0" max="59" placeholder="30" />
+
+              <label>
+                MINUTES
+              </label>
+
+              <input
+                id="minutesInput"
+                type="number"
+                min="0"
+                max="59"
+                step="1"
+                placeholder="30"
+              />
+
             </div>
 
+
             <div class="input-group">
-              <label>SECONDS</label>
-              <input id="secondsInput" type="number" min="0" max="59" placeholder="0" />
+
+              <label>
+                SECONDS
+              </label>
+
+              <input
+                id="secondsInput"
+                type="number"
+                min="0"
+                max="59"
+                step="1"
+                placeholder="0"
+              />
+
             </div>
 
           </div>
 
 
-          <div id="activityPreview" class="calculation-preview">
+          <div
+            id="activityPreview"
+            class="calculation-preview"
+          >
+
             <div>
+
               <span>SPEED</span>
-              <strong>-- km/h</strong>
+
+              <strong>
+                -- km/h
+              </strong>
+
             </div>
 
             <div>
+
               <span>PACE</span>
-              <strong>-- min/km</strong>
+
+              <strong>
+                -- min/km
+              </strong>
+
             </div>
+
           </div>
 
 
-          <button class="primary-button" onclick="logActivity()">
+          <button
+            type="button"
+            class="primary-button"
+            onclick="logActivity()"
+          >
             + LOG ACTIVITY
           </button>
 
         </div>
 
 
+
         <div class="section-heading">
+
           <div>
-            <p class="eyebrow">PERFORMANCE HISTORY</p>
-            <h2>Recent Sessions</h2>
+
+            <p class="eyebrow">
+              PERFORMANCE HISTORY
+            </p>
+
+            <h2>
+              Recent Sessions
+            </h2>
+
           </div>
+
         </div>
 
-        <div id="activityHistory" class="history-list"></div>
+
+        <div
+          id="activityHistory"
+          class="history-list"
+        ></div>
 
       </section>
 
 
-      <!-- =========================
-           STRENGTH HUB
-      ========================== -->
 
-      <section id="workoutTab" class="tab">
+      <!-- =====================================
+           STRENGTH HUB
+      ====================================== -->
+
+      <section
+        id="workoutTab"
+        class="tab"
+      >
 
         <div class="page-heading">
+
           <div>
-            <p class="eyebrow">STRENGTH DEVELOPMENT</p>
-            <h2>V-Taper Hub</h2>
-            <p class="muted">Shoulders • Lats • Core Stability</p>
+
+            <p class="eyebrow">
+              STRENGTH DEVELOPMENT
+            </p>
+
+            <h2>
+              V-Taper Hub
+            </h2>
+
+            <p class="muted">
+              Shoulders • Lats • Core Stability
+            </p>
+
           </div>
+
         </div>
+
 
 
         <div class="safety-banner">
 
-          <div class="safety-symbol">🛡️</div>
+          <div class="safety-symbol">
+            🛡️
+          </div>
 
           <div>
-            <strong>YOUTH TRAINING MODE</strong>
+
+            <strong>
+              YOUTH TRAINING MODE
+            </strong>
 
             <p>
-              Focus on control and technique. Use bodyweight, bands or light resistance.
+              Focus on control and technique.
+              Use bodyweight, bands or light resistance.
               Avoid maximum lifting.
             </p>
+
           </div>
 
         </div>
+
 
 
         <div class="constraint-grid">
 
           <div>
+
             <span>REPS</span>
-            <strong>10–15</strong>
+
+            <strong>
+              10–15
+            </strong>
+
           </div>
 
           <div>
+
             <span>SETS</span>
-            <strong>2–4</strong>
+
+            <strong>
+              2–4
+            </strong>
+
           </div>
 
           <div>
+
             <span>TARGET RPE</span>
-            <strong>6–8</strong>
+
+            <strong>
+              6–8
+            </strong>
+
           </div>
 
         </div>
 
 
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">EXERCISE LIBRARY</p>
-            <h2>V-Taper Session</h2>
-          </div>
-        </div>
 
-        <div id="exerciseList" class="exercise-list"></div>
+        <div
+          id="exerciseList"
+          class="exercise-list"
+        ></div>
 
+
+
+        <!-- STRENGTH LOG -->
 
         <div class="panel strength-log">
 
-          <div class="panel-title">LOG A STRENGTH SET</div>
+          <div class="panel-title">
+            LOG A STRENGTH SET
+          </div>
+
 
           <div class="input-group">
-            <label>EXERCISE</label>
+
+            <label>
+              EXERCISE
+            </label>
 
             <select id="exerciseInput">
-              <option>Assisted Pull-ups</option>
-              <option>Inverted Rows</option>
-              <option>Band Straight-Arm Pulldowns</option>
-              <option>Pike Push-ups</option>
-              <option>Light Lateral Raises</option>
-              <option>Y-T-W Raises</option>
-              <option>Band Pull-Aparts</option>
-              <option>Dead Hang</option>
-              <option>Pallof Press</option>
+
+              <option>
+                Assisted Pull-ups
+              </option>
+
+              <option>
+                Inverted Rows
+              </option>
+
+              <option>
+                Band Straight-Arm Pulldowns
+              </option>
+
+              <option>
+                Pike Push-ups
+              </option>
+
+              <option>
+                Light Lateral Raises
+              </option>
+
+              <option>
+                Y-T-W Raises
+              </option>
+
+              <option>
+                Band Pull-Aparts
+              </option>
+
+              <option>
+                Dead Hang
+              </option>
+
+              <option>
+                Pallof Press
+              </option>
+
             </select>
+
           </div>
+
+
 
           <div class="form-row">
 
             <div class="input-group">
-              <label>REPS</label>
-              <input id="strengthReps" type="number" placeholder="12" />
+
+              <label>
+                REPS
+              </label>
+
+              <input
+                id="strengthReps"
+                type="number"
+                min="1"
+                max="100"
+                step="1"
+                placeholder="12"
+                required
+              />
+
             </div>
+
 
             <div class="input-group">
-              <label>RPE (1-10)</label>
-              <input id="strengthRpe" type="number" min="1" max="10" placeholder="7" />
+
+              <label>
+                RPE (1-10)
+              </label>
+
+              <input
+                id="strengthRpe"
+                type="number"
+                min="1"
+                max="10"
+                step="1"
+                placeholder="7"
+                required
+              />
+
             </div>
 
           </div>
 
+
+
           <div class="input-group">
-            <label>WEIGHT KG (OPTIONAL)</label>
-            <input id="strengthWeight" type="number" min="0" placeholder="0" />
+
+            <label>
+              WEIGHT KG (OPTIONAL)
+            </label>
+
+            <input
+              id="strengthWeight"
+              type="number"
+              min="0"
+              max="500"
+              step="0.5"
+              placeholder="0"
+            />
+
           </div>
 
-          <button class="primary-button" onclick="logStrengthSet()">
+
+          <button
+            type="button"
+            class="primary-button"
+            onclick="logStrengthSet()"
+          >
             + LOG SET
           </button>
 
-          <p id="strengthFeedback" class="feedback"></p>
+
+          <p
+            id="strengthFeedback"
+            class="feedback"
+          ></p>
 
         </div>
+
 
 
         <div class="section-heading">
+
           <div>
-            <p class="eyebrow">SESSION HISTORY</p>
-            <h2>Strength Progress</h2>
+
+            <p class="eyebrow">
+              SESSION HISTORY
+            </p>
+
+            <h2>
+              Strength Progress
+            </h2>
+
           </div>
+
         </div>
 
-        <div id="strengthHistory" class="history-list"></div>
+
+        <div
+          id="strengthHistory"
+          class="history-list"
+        ></div>
 
       </section>
 
 
-      <!-- =========================
-           RECOVERY
-      ========================== -->
 
-      <section id="recoveryTab" class="tab">
+      <!-- =====================================
+           RECOVERY
+      ====================================== -->
+
+      <section
+        id="recoveryTab"
+        class="tab"
+      >
 
         <div class="page-heading">
+
           <div>
-            <p class="eyebrow">RECOVERY SYSTEM</p>
-            <h2>Sleep & Readiness</h2>
-            <p class="muted">Recovery drives adaptation.</p>
+
+            <p class="eyebrow">
+              RECOVERY SYSTEM
+            </p>
+
+            <h2>
+              Sleep & Readiness
+            </h2>
+
+            <p class="muted">
+              Recovery drives adaptation.
+            </p>
+
           </div>
+
         </div>
+
 
 
         <div class="panel">
 
           <div class="input-group">
-            <label>HOURS SLEPT</label>
-            <input id="sleepHours" type="number" step="0.1" min="0" max="15" placeholder="8.0" />
-          </div>
 
-          <div class="rating-group">
+            <label>
+              HOURS SLEPT
+            </label>
 
-            <label>SLEEP QUALITY</label>
-
-            <div class="rating-buttons" id="qualityButtons">
-
-              <button onclick="setRating('quality', 1)">1</button>
-              <button onclick="setRating('quality', 2)">2</button>
-              <button onclick="setRating('quality', 3)">3</button>
-              <button onclick="setRating('quality', 4)">4</button>
-              <button onclick="setRating('quality', 5)">5</button>
-
-            </div>
+            <input
+              id="sleepHours"
+              type="number"
+              min="0.1"
+              max="24"
+              step="0.1"
+              placeholder="8.0"
+              required
+            />
 
           </div>
 
-          <div class="rating-group">
 
-            <label>MORNING READINESS</label>
 
-            <div class="rating-buttons" id="readinessButtons">
+          <!-- SELECTS FOR NEW SCRIPT -->
 
-              <button onclick="setRating('readiness', 1)">1</button>
-              <button onclick="setRating('readiness', 2)">2</button>
-              <button onclick="setRating('readiness', 3)">3</button>
-              <button onclick="setRating('readiness', 4)">4</button>
-              <button onclick="setRating('readiness', 5)">5</button>
+          <div class="input-group">
 
-            </div>
+            <label>
+              SLEEP QUALITY
+            </label>
+
+            <select id="sleepQuality">
+
+              <option value="">
+                Select quality
+              </option>
+
+              <option value="1">
+                1 - Very Poor
+              </option>
+
+              <option value="2">
+                2 - Poor
+              </option>
+
+              <option value="3">
+                3 - Average
+              </option>
+
+              <option value="4">
+                4 - Good
+              </option>
+
+              <option value="5">
+                5 - Excellent
+              </option>
+
+            </select>
 
           </div>
 
-          <button class="primary-button" onclick="logRecovery()">
+
+
+          <div class="input-group">
+
+            <label>
+              MORNING READINESS
+            </label>
+
+            <select id="readiness">
+
+              <option value="">
+                Select readiness
+              </option>
+
+              <option value="1">
+                1 - Very Low
+              </option>
+
+              <option value="2">
+                2 - Low
+              </option>
+
+              <option value="3">
+                3 - Moderate
+              </option>
+
+              <option value="4">
+                4 - Good
+              </option>
+
+              <option value="5">
+                5 - Excellent
+              </option>
+
+            </select>
+
+          </div>
+
+
+
+          <button
+            type="button"
+            class="primary-button"
+            onclick="logRecovery()"
+          >
             SAVE RECOVERY DATA
           </button>
 
         </div>
 
 
-        <div id="recoveryResult" class="result-card hidden"></div>
+
+        <div class="result-card">
+
+          <p class="eyebrow">
+            RECOVERY SUMMARY
+          </p>
+
+          <div class="analytics-grid">
+
+            <div class="analytics-card">
+
+              <p>
+                READINESS
+              </p>
+
+              <strong id="readinessScore">
+                --
+              </strong>
+
+            </div>
+
+
+            <div class="analytics-card">
+
+              <p>
+                SLEEP
+              </p>
+
+              <strong id="sleepDisplay">
+                --
+              </strong>
+
+            </div>
+
+
+            <div class="analytics-card">
+
+              <p>
+                QUALITY
+              </p>
+
+              <strong id="qualityDisplay">
+                --
+              </strong>
+
+            </div>
+
+          </div>
+
+          <p
+            id="readinessText"
+            class="muted"
+          >
+            Log recovery to calculate readiness.
+          </p>
+
+        </div>
+
 
 
         <div class="recovery-rules">
 
           <div>
+
             <span>⚠️</span>
+
             <p>
-              <strong>Recovery Deficit:</strong>
-              Less than 7 hours sleep or quality below 3 triggers a lighter-training recommendation.
+              <strong>
+                Recovery Deficit:
+              </strong>
+
+              Less than 7 hours sleep can indicate
+              increased recovery needs.
             </p>
+
           </div>
 
+
           <div>
+
             <span>✨</span>
+
             <p>
-              Logging 8+ hours of sleep earns bonus XP.
+              Consistent quality sleep supports
+              long-term athletic development.
             </p>
+
           </div>
 
         </div>
@@ -567,20 +1233,39 @@
       </section>
 
 
-      <!-- =========================
-           NUTRITION
-      ========================== -->
 
-      <section id="nutritionTab" class="tab">
+      <!-- =====================================
+           NUTRITION
+      ====================================== -->
+
+      <section
+        id="nutritionTab"
+        class="tab"
+      >
 
         <div class="page-heading">
+
           <div>
-            <p class="eyebrow">FUEL SYSTEM</p>
-            <h2>Nutrition & Hydration</h2>
-            <p class="muted">Fuel training and recovery consistently.</p>
+
+            <p class="eyebrow">
+              FUEL SYSTEM
+            </p>
+
+            <h2>
+              Nutrition & Hydration
+            </h2>
+
+            <p class="muted">
+              Fuel training and recovery consistently.
+            </p>
+
           </div>
+
         </div>
 
+
+
+        <!-- TARGETS -->
 
         <div class="target-grid">
 
@@ -588,244 +1273,800 @@
 
             <span>💧</span>
 
-            <small>DAILY HYDRATION TARGET</small>
+            <small>
+              DAILY HYDRATION TARGET
+            </small>
 
-            <strong id="hydrationTarget">-- L</strong>
+            <strong id="hydrationTarget">
+              -- L/day
+            </strong>
 
-            <p>Baseline estimate based on body weight.</p>
+            <p>
+              Minimum daily target is 3 litres.
+            </p>
 
           </div>
+
 
           <div class="target-card">
 
             <span>🍗</span>
 
-            <small>GENERAL PROTEIN RANGE</small>
+            <small>
+              DAILY PROTEIN TARGET
+            </small>
 
-            <strong id="proteinTarget">-- g</strong>
+            <strong id="proteinTarget">
+              -- g/day
+            </strong>
 
-            <p>Active athlete range based on body weight.</p>
+            <p>
+              Calculated as 1.2 × body weight.
+            </p>
 
           </div>
 
         </div>
 
 
+
+        <!-- LOG NUTRITION -->
+
         <div class="panel">
 
-          <div class="input-group">
-            <label>WATER TODAY (LITERS)</label>
-            <input id="waterInput" type="number" min="0" step="0.1" placeholder="2.0" />
+          <div class="panel-title">
+            LOG TODAY'S FUEL
           </div>
 
-          <div class="input-group">
-            <label>PROTEIN TODAY (GRAMS)</label>
-            <input id="proteinInput" type="number" min="0" placeholder="80" />
-          </div>
 
           <div class="input-group">
-            <label>CALORIES (OPTIONAL)</label>
-            <input id="caloriesInput" type="number" min="0" placeholder="Optional" />
+
+            <label>
+              WATER TODAY (LITRES)
+            </label>
+
+            <input
+              id="waterInput"
+              type="number"
+              min="0"
+              max="20"
+              step="0.1"
+              placeholder="2.0"
+            />
+
           </div>
 
-          <button class="primary-button" onclick="logNutrition()">
+
+          <div class="input-group">
+
+            <label>
+              PROTEIN TODAY (GRAMS)
+            </label>
+
+            <input
+              id="proteinInput"
+              type="number"
+              min="0"
+              max="1000"
+              step="1"
+              placeholder="80"
+            />
+
+          </div>
+
+
+          <div class="input-group">
+
+            <label>
+              CALORIES (OPTIONAL)
+            </label>
+
+            <input
+              id="caloriesInput"
+              type="number"
+              min="0"
+              max="15000"
+              step="1"
+              placeholder="Optional"
+            />
+
+          </div>
+
+
+          <button
+            type="button"
+            class="primary-button"
+            onclick="logNutrition()"
+          >
             LOG NUTRITION
           </button>
 
         </div>
 
 
-        <div id="fuelScoreCard" class="fuel-score-card">
 
-          <p>RECOVERY FUEL SCORE</p>
+        <!-- PROGRESS -->
 
-          <div>
-            <strong id="fuelScore">--</strong>
-            <span>/100</span>
+        <div class="panel nutrition-progress-card">
+
+          <div class="section-heading">
+
+            <div>
+
+              <p class="eyebrow">
+                TODAY'S PROGRESS
+              </p>
+
+              <h2>
+                Fuel Tracking
+              </h2>
+
+            </div>
+
           </div>
 
-          <small id="fuelMessage">
-            Log nutrition and recovery data to calculate your score.
+
+          <div class="progress-item">
+
+            <div class="progress-header">
+
+              <span>
+                💧 Hydration
+              </span>
+
+              <strong id="waterPercentage">
+                0%
+              </strong>
+
+            </div>
+
+            <div class="progress-track">
+
+              <div
+                id="waterProgressBar"
+                class="progress-fill"
+                style="width: 0%"
+              ></div>
+
+            </div>
+
+            <small id="waterValue">
+              0 L
+            </small>
+
+          </div>
+
+
+
+          <div class="progress-item">
+
+            <div class="progress-header">
+
+              <span>
+                🍗 Protein
+              </span>
+
+              <strong id="proteinPercentage">
+                0%
+              </strong>
+
+            </div>
+
+            <div class="progress-track">
+
+              <div
+                id="proteinProgressBar"
+                class="progress-fill"
+                style="width: 0%"
+              ></div>
+
+            </div>
+
+            <small id="proteinValue">
+              0 g
+            </small>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- FUEL SCORE -->
+
+        <div
+          id="fuelScoreCard"
+          class="fuel-score-card"
+        >
+
+          <p>
+            RECOVERY FUEL SCORE
+          </p>
+
+          <div>
+
+            <strong id="fuelScore">
+              --
+            </strong>
+
+          </div>
+
+          <small id="fuelScoreText">
+            Log nutrition to calculate your fuel score.
           </small>
+
+          <!-- Compatibility with older script -->
+          <small
+            id="fuelMessage"
+            class="hidden"
+          ></small>
 
         </div>
 
       </section>
 
 
-      <!-- =========================
-           ANALYTICS
-      ========================== -->
 
-      <section id="analyticsTab" class="tab">
+      <!-- =====================================
+           ANALYTICS
+      ====================================== -->
+
+      <section
+        id="analyticsTab"
+        class="tab"
+      >
 
         <div class="page-heading">
+
           <div>
-            <p class="eyebrow">PERFORMANCE INTELLIGENCE</p>
-            <h2>Analytics</h2>
-            <p class="muted">Your data. Your development.</p>
+
+            <p class="eyebrow">
+              PERFORMANCE INTELLIGENCE
+            </p>
+
+            <h2>
+              Analytics
+            </h2>
+
+            <p class="muted">
+              Your data. Your development.
+            </p>
+
           </div>
+
         </div>
 
+
+
+        <!-- NEW ANALYTICS -->
 
         <div class="analytics-grid">
 
           <div class="analytics-card">
 
-            <p>WORKOUTS LOGGED</p>
+            <p>
+              TOTAL SESSIONS
+            </p>
 
-            <strong id="analyticsWorkouts">0</strong>
-
-          </div>
-
-          <div class="analytics-card">
-
-            <p>STRENGTH SETS</p>
-
-            <strong id="analyticsStrength">0</strong>
+            <strong id="totalSessions">
+              0
+            </strong>
 
           </div>
 
+
           <div class="analytics-card">
 
-            <p>AVERAGE SPEED</p>
+            <p>
+              TOTAL DISTANCE
+            </p>
 
-            <strong id="analyticsSpeed">--</strong>
+            <strong id="totalDistance">
+              0 km
+            </strong>
 
           </div>
 
+
           <div class="analytics-card">
 
-            <p>XP LEVEL</p>
+            <p>
+              TRAINING TIME
+            </p>
 
-            <strong id="analyticsLevel">NOVICE</strong>
+            <strong id="totalTrainingTime">
+              0 h
+            </strong>
+
+          </div>
+
+
+          <div class="analytics-card">
+
+            <p>
+              AVG SPEED
+            </p>
+
+            <strong id="averageSpeed">
+              0 km/h
+            </strong>
+
+          </div>
+
+
+          <div class="analytics-card">
+
+            <p>
+              STRENGTH VOLUME
+            </p>
+
+            <strong id="strengthVolume">
+              0 kg
+            </strong>
 
           </div>
 
         </div>
+
 
 
         <div class="section-heading">
+
           <div>
-            <p class="eyebrow">WEEKLY VOLUME</p>
-            <h2>Training Distribution</h2>
+
+            <p class="eyebrow">
+              SPORT DISTRIBUTION
+            </p>
+
+            <h2>
+              Training Breakdown
+            </h2>
+
           </div>
+
         </div>
 
-        <div id="volumeChart" class="bar-chart"></div>
+
+        <div
+          id="sportBreakdown"
+          class="panel"
+        >
+
+          <div class="empty-state">
+
+            <p>
+              Log activities to see your sport breakdown.
+            </p>
+
+          </div>
+
+        </div>
+
 
 
         <div class="section-heading">
+
           <div>
-            <p class="eyebrow">PERFORMANCE</p>
-            <h2>Recent Activity Trend</h2>
+
+            <p class="eyebrow">
+              PERFORMANCE INTELLIGENCE
+            </p>
+
+            <h2>
+              Athlete Insights
+            </h2>
+
           </div>
+
         </div>
 
-        <div id="performanceTrend" class="trend-list"></div>
+
+        <div
+          id="performanceInsight"
+          class="panel"
+        >
+
+          <div class="empty-state">
+
+            <p>
+              Log training data to generate insights.
+            </p>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- LEGACY ANALYTICS IDS
+             kept for script compatibility -->
+
+        <div class="hidden">
+
+          <span id="analyticsWorkouts">0</span>
+          <span id="analyticsStrength">0</span>
+          <span id="analyticsSpeed">0</span>
+          <span id="analyticsLevel">NOVICE</span>
+
+          <div id="volumeChart"></div>
+          <div id="performanceTrend"></div>
+
+        </div>
 
       </section>
 
 
-      <!-- =========================
-           PROFILE
-      ========================== -->
 
-      <section id="profileTab" class="tab">
+      <!-- =====================================
+           PROFILE
+      ====================================== -->
+
+      <section
+        id="profileTab"
+        class="tab"
+      >
 
         <div class="profile-hero">
 
           <div class="profile-avatar">
-            <span id="profileInitial">A</span>
+
+            <span id="profileInitial">
+              A
+            </span>
+
           </div>
 
-          <h2 id="profileName">Athlete</h2>
 
-          <p id="profileDetails">--</p>
+          <h2 id="profileName">
+            Athlete
+          </h2>
+
+
+          <p id="profileDetails">
+            --
+          </p>
+
 
           <div class="profile-level">
-            <span id="profileLevel">NOVICE ATHLETE</span>
+
+            <span id="profileLevel">
+              NOVICE ATHLETE
+            </span>
+
+          </div>
+
+
+          <button
+            type="button"
+            class="secondary-btn"
+            onclick="editProfile()"
+          >
+            EDIT PROFILE
+          </button>
+
+        </div>
+
+
+
+        <!-- PROFILE DETAILS -->
+
+        <div class="panel">
+
+          <p class="eyebrow">
+            ATHLETE PROFILE
+          </p>
+
+
+          <div class="analytics-grid">
+
+            <div class="analytics-card">
+
+              <p>AGE</p>
+
+              <strong id="profileAge">
+                --
+              </strong>
+
+            </div>
+
+
+            <div class="analytics-card">
+
+              <p>WEIGHT</p>
+
+              <strong id="profileWeight">
+                --
+              </strong>
+
+            </div>
+
+
+            <div class="analytics-card">
+
+              <p>GOAL</p>
+
+              <strong id="profileGoal">
+                --
+              </strong>
+
+            </div>
+
           </div>
 
         </div>
 
+
+
+        <!-- PROFILE STATS -->
+
+        <div class="panel">
+
+          <p class="eyebrow">
+            ATHLETE HISTORY
+          </p>
+
+
+          <div class="analytics-grid">
+
+            <div class="analytics-card">
+
+              <p>
+                SESSIONS
+              </p>
+
+              <strong id="profileSessions">
+                0
+              </strong>
+
+            </div>
+
+
+            <div class="analytics-card">
+
+              <p>
+                DISTANCE
+              </p>
+
+              <strong id="profileDistance">
+                0 km
+              </strong>
+
+            </div>
+
+
+            <div class="analytics-card">
+
+              <p>
+                TOTAL XP
+              </p>
+
+              <strong id="profileXP">
+                0 XP
+              </strong>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- XP -->
 
         <div class="xp-card">
 
           <div class="xp-top">
-            <span>ATHLETE EXPERIENCE</span>
-            <strong id="profileXp">0 XP</strong>
+
+            <span>
+              ATHLETE EXPERIENCE
+            </span>
+
+            <strong id="profileXp">
+              0 XP
+            </strong>
+
           </div>
+
 
           <div class="xp-bar">
+
             <div id="xpProgress"></div>
+
           </div>
 
-          <small id="xpNext">Keep training to level up.</small>
+
+          <small id="xpNext">
+            Keep training to level up.
+          </small>
 
         </div>
 
 
-        <div class="profile-actions">
 
-          <button onclick="exportData()">⬇ EXPORT BACKUP</button>
+        <!-- BACKUP -->
 
-          <label class="import-button">
-            ⬆ IMPORT BACKUP
-            <input type="file" accept=".json" onchange="importData(event)" />
-          </label>
+        <div class="card backup-card">
 
-          <button class="danger-button" onclick="resetAllData()">
-            RESET ATHLETE SYSTEM
+          <div class="section-header">
+
+            <div>
+
+              <p class="eyebrow">
+                DATA SECURITY
+              </p>
+
+              <h2>
+                Backup & Restore
+              </h2>
+
+            </div>
+
+          </div>
+
+
+          <p class="muted">
+
+            Your data is stored locally in this browser.
+            Export regular backups to protect your
+            training history.
+
+          </p>
+
+
+          <div class="backup-actions">
+
+            <button
+              type="button"
+              class="secondary-btn"
+              onclick="exportData()"
+            >
+              ↓ EXPORT JSON BACKUP
+            </button>
+
+
+            <button
+              type="button"
+              class="secondary-btn"
+              onclick="importData()"
+            >
+              ↑ IMPORT JSON BACKUP
+            </button>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- DANGER ZONE -->
+
+        <div class="card danger-card">
+
+          <p class="eyebrow">
+            DANGER ZONE
+          </p>
+
+          <h3>
+            Reset Athlete Data
+          </h3>
+
+          <p class="muted">
+
+            Permanently deletes all activities,
+            nutrition, recovery logs and XP
+            from this browser.
+
+          </p>
+
+
+          <button
+            type="button"
+            class="danger-btn"
+            onclick="resetAllData()"
+          >
+            RESET ALL DATA
           </button>
 
         </div>
 
       </section>
 
+
     </main>
 
 
-    <!-- =========================
+
+    <!-- =====================================
          BOTTOM NAVIGATION
-    ========================== -->
+    ====================================== -->
 
     <nav class="bottom-nav">
 
-      <button class="nav-item active-nav" data-tab="home" onclick="showTab('home')">
+      <button
+        type="button"
+        class="nav-item active-nav"
+        data-tab="home"
+        onclick="showTab('home')"
+      >
+
         <span>⌂</span>
         <small>HOME</small>
+
       </button>
 
-      <button class="nav-item" data-tab="activity" onclick="showTab('activity')">
+
+      <button
+        type="button"
+        class="nav-item"
+        data-tab="activity"
+        onclick="showTab('activity')"
+      >
+
         <span>◉</span>
         <small>LOG</small>
+
       </button>
 
-      <button class="nav-item nav-center" data-tab="workout" onclick="showTab('workout')">
+
+      <button
+        type="button"
+        class="nav-item nav-center"
+        data-tab="workout"
+        onclick="showTab('workout')"
+      >
+
         <span>⚡</span>
         <small>TRAIN</small>
+
       </button>
 
-      <button class="nav-item" data-tab="recovery" onclick="showTab('recovery')">
+
+      <button
+        type="button"
+        class="nav-item"
+        data-tab="recovery"
+        onclick="showTab('recovery')"
+      >
+
         <span>♥</span>
         <small>RECOVER</small>
+
       </button>
 
-      <button class="nav-item" data-tab="nutrition" onclick="showTab('nutrition')">
+
+      <button
+        type="button"
+        class="nav-item"
+        data-tab="nutrition"
+        onclick="showTab('nutrition')"
+      >
+
         <span>◒</span>
         <small>FUEL</small>
+
       </button>
 
-      <button class="nav-item" data-tab="analytics" onclick="showTab('analytics')">
+
+      <button
+        type="button"
+        class="nav-item"
+        data-tab="analytics"
+        onclick="showTab('analytics')"
+      >
+
         <span>▥</span>
         <small>DATA</small>
+
       </button>
 
     </nav>
 
   </div>
 
+
+
+  <!-- SCRIPT -->
 
   <script src="./script.js"></script>
 
